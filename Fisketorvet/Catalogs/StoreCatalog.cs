@@ -9,10 +9,12 @@ namespace Fisketorvet.Catalogs
     public class StoreCatalog
     {
         private Dictionary<int, Store> stores { get; }
+        private static StoreCatalog _instance;
+
         private StoreCatalog()
         {
             stores = new Dictionary<int, Store>();
-            stores.Add(1, new Store() { StoreId = 1, StoreName = "AND KEBAB", TheStoreType = Store.StoreType.Restaurant, TheShopType = Store.ShopType.Restaurant, TelContact = 12345678, Offer = null, ImageName = "andKebab.png"});
+            stores.Add(1, new Store() { StoreId = 1, StoreName = "AND KEBAB", TheStoreType = Store.StoreType.Restaurant, TheShopType = Store.ShopType.Restaurant, TelContact = 12345678, Offer = null, ImageName = "andKebab2.png" });
             stores.Add(2, new Store() { StoreId = 2, StoreName = "BEAUTY HAIR", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.Services, TelContact = 60987541, Offer = "10 %", ImageName = "beautyhair.jpg" });
             stores.Add(3, new Store() { StoreId = 3, StoreName = "BOOK & IDEA", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.BookAndElectronics, TelContact = 81456935, Offer = "5 for 4", ImageName = "book.png" });
             stores.Add(4, new Store() { StoreId = 4, StoreName = "THE ELECTRICITY GIANT", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.BookAndElectronics, TelContact = 47458962, Offer = null, ImageName = "elgiganten.png" });
@@ -32,6 +34,22 @@ namespace Fisketorvet.Catalogs
             stores.Add(18, new Store() { StoreId = 18, StoreName = "TELIA", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.Services, TelContact = 75506552, Offer = null, ImageName = "telia.png" });
             stores.Add(19, new Store() { StoreId = 19, StoreName = "THE BODY SHOP", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.HealthAndBeauty, TelContact = 62203558, Offer = "3 for 2", ImageName = "thebodyshop.png" });
             stores.Add(20, new Store() { StoreId = 20, StoreName = "ZARA", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.Fashion, TelContact = 70405010, Offer = null, ImageName = "Zara.jpg" });
+        }
+
+        public static StoreCatalog Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new StoreCatalog();
+                }
+                return _instance;
+            }
+        }
+        public Dictionary<int, Store> AllStores()
+        {
+            return stores;
         }
     }
 }
