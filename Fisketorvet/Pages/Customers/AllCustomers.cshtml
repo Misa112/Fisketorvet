@@ -1,0 +1,35 @@
+﻿@page
+@model Fisketorvet.Pages.Customers.AllCustomersModel
+@{
+    ViewData["Title"] = "All Customers";
+}
+<h1>All Customers</h1>
+@*<a href="/Customers/CreateCustomers">Create New Customers</a>*@
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th> Customer Id </th>
+            <th> Name </th>
+            <th> Address </th>
+            <th> Phone Number </th>
+            <th> Email Address </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Customers != null)
+        {
+            @foreach (var cusotmer in Model.Customers)
+            {
+        <tr>
+            <td>@cusotmer.Value.CustomerId </td>
+            <td> @cusotmer.Value.Name</td>
+            <td>@cusotmer.Value.Address </td>
+            <td>@cusotmer.Value.PhoneNumber </td>
+            <td>@cusotmer.Value.Email </td>
+            <td><div>Edit</div> <div>Delete</div> </td>
+        </tr>
+            }
+        }
+    </tbody>
+</table>
