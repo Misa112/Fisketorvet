@@ -1,0 +1,32 @@
+﻿@page
+@model Fisketorvet.Pages.Stores.AllStoresModel
+@{
+    ViewData["Title"] = "All Stores";
+}
+
+<h1>All Stores</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>           
+            <th> Name </th>
+            <th> Contact </th>
+            <th> Image </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var store in Model.Stores)
+        {
+        <tr>
+            <td>@store.Value.StoreName</td>
+            <td>@store.Value.TelContact</td>
+            
+            //unable to show images
+            <td>
+            <img src="~/Images/StoresImages/ @store.Value.ImageName" width="60" height="70">
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
