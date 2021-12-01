@@ -6,10 +6,16 @@
 
 <h1>All Stores</h1>
 
+<form>
+    <p>
+        Search: <input type="text" asp-for="FilterCriteria" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 
 <table class="table">
     <thead>
-        <tr>           
+        <tr>
             <th> Name </th>
             <th> Contact </th>
             <th> Image </th>
@@ -18,15 +24,13 @@
     <tbody>
         @foreach (var store in Model.Stores)
         {
-        <tr>
-            <td>@store.Value.StoreName</td>
-            <td>@store.Value.TelContact</td>
-            
-            //unable to show images
-            <td>
-            <img src="~/Images/StoresImages/ @store.Value.ImageName" width="60" height="70">
-            </td>
-        </tr>
+            <tr>
+                <td>@store.Value.StoreName</td>
+                <td>@store.Value.TelContact</td>                
+                <td>
+                    <img src="~/Images/StoresImages/ @store.Value.ImageName" width="60" height="70">
+                </td>
+            </tr>
         }
     </tbody>
 </table>

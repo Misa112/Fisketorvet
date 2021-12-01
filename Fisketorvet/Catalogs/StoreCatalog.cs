@@ -51,5 +51,20 @@ namespace Fisketorvet.Catalogs
         {
             return stores;
         }
+        public Dictionary<int, Store> FilterStore(string criteria)
+        {            
+            Dictionary<int, Store> filteredStores = new Dictionary<int, Store>();
+            if(criteria!=null)
+            {
+                foreach (var item in stores.Values)
+                {
+                    if (item.StoreName.StartsWith(criteria))
+                    {
+                        filteredStores.Add(item.StoreId, item);
+                    }
+                }
+            }            
+            return filteredStores;
+        }
     }
 }
