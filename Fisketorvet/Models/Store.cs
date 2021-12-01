@@ -14,7 +14,10 @@ namespace Fisketorvet.Models
         public enum ShopType { Groceries, Fashion, HealthAndBeauty, BookAndElectronics, Services, Restaurant}
         public ShopType TheShopType { get; set; }
         public int TelContact { get; set; }
-        public TimeSpan OpeningTime { get; set; }
+
+        //not sure about type
+        //public DateTime OpeningTime { get; set; }
+
         public string Offer { get; set; }
         public string ImageName { get; set; }
     }
