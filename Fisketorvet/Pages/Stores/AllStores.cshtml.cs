@@ -17,9 +17,17 @@ namespace Fisketorvet.Pages.Stores
         {
             catalog = StoreCatalog.Instance;
         }
+        [BindProperty(SupportsGet = true)]
+        public string FilterCriteria { get; set; }
+        public Dictionary<int,Store> FilteredStore { get; set; }
         public IActionResult OnGet()
         {
             Stores = catalog.AllStores();
+
+            if(!string.IsNullOrEmpty(FilterCriteria))
+            {
+                Stores = catalog.FilterStore(FilterCriteria);
+            }
             return Page();
         }
     }

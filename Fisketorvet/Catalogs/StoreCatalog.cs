@@ -14,7 +14,7 @@ namespace Fisketorvet.Catalogs
         private StoreCatalog()
         {
             stores = new Dictionary<int, Store>();
-            stores.Add(1, new Store() { StoreId = 1, StoreName = "AND KEBAB", TheStoreType = Store.StoreType.Restaurant, TheShopType = Store.ShopType.Restaurant, TelContact = 12345678, Offer = null, ImageName = "andKebab2.png" });
+            stores.Add(1, new Store() { StoreId = 1, StoreName = "AND KEBAB", TheStoreType = Store.StoreType.Restaurant, TheShopType = Store.ShopType.Restaurant, TelContact = 12345678, Offer = null, ImageName = "andKebab.png" });
             stores.Add(2, new Store() { StoreId = 2, StoreName = "BEAUTY HAIR", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.Services, TelContact = 60987541, Offer = "10 %", ImageName = "beautyhair.jpg" });
             stores.Add(3, new Store() { StoreId = 3, StoreName = "BOOK & IDEA", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.BookAndElectronics, TelContact = 81456935, Offer = "5 for 4", ImageName = "book.png" });
             stores.Add(4, new Store() { StoreId = 4, StoreName = "THE ELECTRICITY GIANT", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.BookAndElectronics, TelContact = 47458962, Offer = null, ImageName = "elgiganten.png" });
@@ -50,6 +50,28 @@ namespace Fisketorvet.Catalogs
         public Dictionary<int, Store> AllStores()
         {
             return stores;
+        }
+        public Dictionary<int, Store> FilterStore(string criteria)
+        {            
+            Dictionary<int, Store> filteredStores = new Dictionary<int, Store>();
+            if(criteria!=null)
+            {
+                foreach (var item in stores.Values)
+                {
+                    if (item.StoreName.StartsWith(criteria))
+                    {
+                        filteredStores.Add(item.StoreId, item);
+                    }
+                }
+            }            
+            return filteredStores;
+        }
+        public void CreateStore(Store store)
+        {
+            if(!stores.ContainsKey(store.StoreId))
+            {
+                stores.Add(store.StoreId, store);
+            }
         }
     }
 }
