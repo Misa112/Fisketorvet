@@ -1,4 +1,5 @@
-﻿using Fisketorvet.Models;
+﻿using Fisketorvet.Interfaces;
+using Fisketorvet.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Fisketorvet.Catalogs
 {
-    public class StoreCatalog
+    public class StoreCatalog: IStoreRepository
     {
         private Dictionary<int, Store> stores { get; }
-        private static StoreCatalog _instance;
-
-        private StoreCatalog()
+        
+        public StoreCatalog()
         {
             stores = new Dictionary<int, Store>();
             stores.Add(1, new Store() { StoreId = 1, StoreName = "AND KEBAB", TheStoreType = Store.StoreType.Restaurant, TheShopType = Store.ShopType.Restaurant, TelContact = 12345678, Offer = null, ImageName = "andKebab.png" });
@@ -35,18 +35,7 @@ namespace Fisketorvet.Catalogs
             stores.Add(19, new Store() { StoreId = 19, StoreName = "THE BODY SHOP", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.HealthAndBeauty, TelContact = 62203558, Offer = "3 for 2", ImageName = "thebodyshop.png" });
             stores.Add(20, new Store() { StoreId = 20, StoreName = "ZARA", TheStoreType = Store.StoreType.Shop, TheShopType = Store.ShopType.Fashion, TelContact = 70405010, Offer = null, ImageName = "Zara.jpg" });
         }
-
-        public static StoreCatalog Instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new StoreCatalog();
-                }
-                return _instance;
-            }
-        }
+        
         public Dictionary<int, Store> AllStores()
         {
             return stores;

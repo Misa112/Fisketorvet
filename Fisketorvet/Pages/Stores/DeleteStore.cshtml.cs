@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Fisketorvet.Catalogs;
+using Fisketorvet.Interfaces;
 using Fisketorvet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,10 +14,10 @@ namespace Fisketorvet.Pages.Stores
     {
         [BindProperty]
         public Store Store { get; set; }
-        private StoreCatalog catalog;
-        public DeleteStoreModel()
+        private IStoreRepository catalog;
+        public DeleteStoreModel(IStoreRepository repository)
         {
-            catalog = StoreCatalog.Instance;
+            catalog = repository;
         }
         public void OnGet(int id)
         {
