@@ -13,7 +13,12 @@ namespace Fisketorvet.Pages.Customers
     {
         public Dictionary<int, Customer> Customers { get; set; }
 
-        public CustomerCatalog catalog = new CustomerCatalog();
+        private CustomerCatalog catalog;
+
+        public AllCustomersModel()
+        {
+            catalog = CustomerCatalog.Instance;
+        }
         public IActionResult OnGet()
         {
             Customers = catalog.AllCustomers();
