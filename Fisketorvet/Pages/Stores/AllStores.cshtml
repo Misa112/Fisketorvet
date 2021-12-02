@@ -28,13 +28,19 @@
     <tbody>
         @foreach (var store in Model.Stores)
         {
-            <tr>
-                <td>@store.Value.StoreName</td>
-                <td>@store.Value.TelContact</td>                
-                <td>
-                    <img src="~/Images/StoresImages/@store.Value.ImageName" width="130" height="65">
-                </td>
-            </tr>
+        <tr>
+            <td>@store.Value.StoreName</td>
+            <td>@store.Value.TelContact</td>
+            <td>
+                <img src="~/Images/StoresImages/@store.Value.ImageName" width="130" height="65">
+            </td>
+            <td>
+                <p>
+                    <a asp-page="EditStore" asp-route-id="@store.Key">Edit</a> |
+                    <a asp-page="DeleteStore" asp-route-id="@store.Key">Delete</a>
+                </p>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
