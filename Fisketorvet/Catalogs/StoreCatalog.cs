@@ -84,5 +84,12 @@ namespace Fisketorvet.Catalogs
                 stores[store.StoreId] = store;
             }
         }
+        public void DeleteStore(Store store)
+        {
+            if(store != null)
+            {
+                stores.Remove(store.StoreId);
+            }
+        }
     }
 }
