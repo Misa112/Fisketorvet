@@ -6,6 +6,10 @@
 
 <h1>All Stores</h1>
 
+<p>
+    <a asp-page="CreateStore">Create New Store</a>
+</p>
+
 <form>
     <p>
         Search: <input type="text" asp-for="FilterCriteria" />
@@ -28,7 +32,7 @@
                 <td>@store.Value.StoreName</td>
                 <td>@store.Value.TelContact</td>                
                 <td>
-                    <img src="~/Images/StoresImages/ @store.Value.ImageName" width="60" height="70">
+                    <img src="~/Images/StoresImages/@store.Value.ImageName" width="130" height="65">
                 </td>
             </tr>
         }
