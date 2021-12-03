@@ -4,7 +4,23 @@
     ViewData["Title"] = "AllCustomers";
 }
 <h1>All Customers</h1>
-<a href="/Customers/CreateCustomer">Create New Customers</a>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="/Customers/CreateCustomer">Create New Customers</a>
+        </div>
+        <div class="col">
+        </div>
+        <div class="col">
+            <form>
+                <p>
+                    Search: <input type="text" asp-for="FilterCriteria"/>
+                            <input class="btn btn-primary btn-sm" type="submit" value="Filter">
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
 <table class="table table-bordered table-hover table-striped">
     <thead>
         <tr>
@@ -19,16 +35,19 @@
     <tbody>
         @if (Model.Customers != null)
         {
-            @foreach (var cusotmer in Model.Customers)
+            @foreach (var customer in Model.Customers)
             {
-        <tr>
-            <td>@cusotmer.Value.CustomerId </td>
-            <td> @cusotmer.Value.Name</td>
-            <td>@cusotmer.Value.Address </td>
-            <td>@cusotmer.Value.PhoneNumber </td>
-            <td>@cusotmer.Value.Email </td>
-            <td><div>Edit</div> <div>Delete</div> </td>
-        </tr>
+             <tr>
+                <td>@customer.Value.CustomerId </td>
+                <td> @customer.Value.Name</td>
+                <td>@customer.Value.Address </td>
+                <td>@customer.Value.PhoneNumber </td>
+                <td>@customer.Value.Email </td>
+                <td>
+                    <a asp-page="EditCustomer" asp-route-id="@customer.Key">Edit</a>
+                    <a asp-page="DeleteCustomer" asp-route-id="@customer.Key">Delete</a>
+                </td>
+             </tr>
             }
         }
     </tbody>
