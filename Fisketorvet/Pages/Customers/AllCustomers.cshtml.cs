@@ -17,6 +17,7 @@ namespace Fisketorvet.Pages.Customers
 
         [BindProperty(SupportsGet = true)]
         public string FilterCriteria { get; set; }
+
         public AllCustomersModel()
         {
             catalog = CustomerCatalog.Instance;
