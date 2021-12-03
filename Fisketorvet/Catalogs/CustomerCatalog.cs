@@ -45,5 +45,49 @@ namespace Fisketorvet.Catalogs
                 customers.Add(customer.CustomerId, customer);
             }
         }
+
+        
+        public Dictionary<int, Customer> FilterCustomers(string criteria)
+        {
+            Dictionary<int, Customer> filteredStores = new Dictionary<int, Customer>();
+            if (criteria != null)
+            {
+                foreach (var customer in customers.Values)
+                {
+                    if (customer.Name.StartsWith(criteria))
+                    {
+                        filteredStores.Add(customer.CustomerId, customer);
+                    }
+                }
+            }
+            return filteredStores;
+        }
+
+        public Customer GetCustomer(int id)
+        {
+            foreach (var customer in customers.Values)
+            {
+                if (customer.CustomerId == id)
+                {
+                    return customer;
+                }
+            }
+            return null;
+        }
+
+        public void DeleteCustomer(Customer c)
+        {
+            if (c != null)
+            {
+                foreach (var cusotmer in customers.Values)
+                {
+                    if (c.CustomerId == cusotmer.CustomerId)
+                    {
+                        customers.Remove(c.CustomerId);
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

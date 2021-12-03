@@ -13,10 +13,22 @@ namespace Fisketorvet.Pages.Customers
     {
         public Dictionary<int, Customer> Customers { get; set; }
 
-        public CustomerCatalog catalog = new CustomerCatalog();
+        public CustomerCatalog catalog;
+
+        [BindProperty(SupportsGet = true)]
+        public string FilterCriteria { get; set; }
+        public AllCustomersModel()
+        {
+            catalog = CustomerCatalog.Instance;
+        }
         public IActionResult OnGet()
         {
             Customers = catalog.AllCustomers();
+
+            if (!string.IsNullOrEmpty(FilterCriteria))
+            {
+                Customers = catalog.FilterCustomers(FilterCriteria);
+            }
             return Page();
         }
     }
