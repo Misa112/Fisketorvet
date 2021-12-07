@@ -23,13 +23,13 @@ namespace Fisketorvet.Pages.Stores
         {
             Store = catalog.GetStore(id);
         }
-        public IActionResult OnPost()
+        public IActionResult OnPost(int id)
         {
             if(!ModelState.IsValid)
             {
                 return Page();
             }
-            catalog.DeleteStore(Store);
+            catalog.DeleteStore(id);
             return RedirectToPage("AllStores");
         }
     }

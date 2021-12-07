@@ -37,23 +37,58 @@ namespace Fisketorvet.Services
             }
             return filteredStores;
         }
-        
-
-        public void DeleteStore(Store store)
-        {
-            throw new NotImplementedException();
-        }
-
-        
 
         public Store GetStore(int id)
         {
-            throw new NotImplementedException();
+            List<Store> stores = AllStores();
+
+            foreach (var s in stores)
+            {
+                if(s.StoreId == id)
+                {
+                    return s;
+                }
+            }
+            return new Store();
         }
 
-        public void UpdateStore(Store store)
+        //public Country GetCountry(string code)
+        //{
+        //    foreach (var c in GetAllCountries())
+        //    {
+        //        if (c.Code == code)
+        //            return c;
+        //    }
+        //    return new Country();
+        //}
+        //public void DeleteCountry(string code)
+        //{
+        //    List<Country> countries = GetAllCountries().ToList();
+
+        //    foreach (var c in countries)
+        //    {
+        //        if (c.Code == code)
+        //        {
+        //            countries.Remove(c);
+        //            break;
+        //        }
+        //    }
+        //    JsonFileCountryWritter.WriteToJson(countries, JsonFileName);
+        //}
+
+        public void DeleteStore(int id)
         {
-            throw new NotImplementedException();
-        }
+            List<Store> stores = AllStores();
+
+            foreach (var s in stores)
+            {
+                if(s.StoreId == id)
+                {
+                    stores.Remove(s);
+                    break;
+                }
+            }            
+            JsonFileWritter.WriteToJson(stores, JsonFileName);
+        }      
     }
 }

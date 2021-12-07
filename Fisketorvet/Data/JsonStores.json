@@ -14,13 +14,5 @@
     "TelContact": 541,
     "Offer": null,
     "ImageName": null
-  },
-  {
-    "StoreId": 3,
-    "StoreName": "fdf",
-    "TheStoreType": "1",
-    "TelContact": 12345678,
-    "Offer": null,
-    "ImageName": "hm.jpg"
   }
 ]
