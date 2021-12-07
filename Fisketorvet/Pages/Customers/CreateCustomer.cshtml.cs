@@ -6,24 +6,25 @@ using Fisketorvet.Catalogs;
 using Fisketorvet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Fisketorvet.Interfaces;
 
 namespace Fisketorvet.Pages.Customers
 {
     public class CreateCustomerModel : PageModel
     {
-        private CustomerCatalog catalog;
+        private ICustomerRepository catalog;
 
         [BindProperty]
         public Customer Customer { get; set; }
 
-        public CreateCustomerModel()
+        public CreateCustomerModel(ICustomerRepository catalogService)
         {
-            catalog = CustomerCatalog.Instance;
+            catalog = catalogService;
         }
 
-        public IActionResult OnGet()
+        public void OnGet()
         {
-            return Page();
+            //return Page();
         }
 
         public IActionResult OnPost()

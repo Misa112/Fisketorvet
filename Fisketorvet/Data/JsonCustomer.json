@@ -1,0 +1,39 @@
+[
+  {
+    "CustomerId": 1,
+    "Name": "Saugat",
+    "Address": "Tulipanvej 24",
+    "PhoneNumber": 71555810,
+    "Email": "Saugatkhatiwada10@gmail.com"
+  },
+  {
+    "CustomerId": 2,
+    "Name": "Michaela",
+    "Address": "Trekoner",
+    "PhoneNumber": 776886499,
+    "Email": "macejovskamicha@gmail.com"
+  },
+  {
+    "CustomerId": 3,
+    "Name": "Sabin",
+    "Address": "Madumvej",
+    "PhoneNumber": 31862094,
+    "Email": "ghimiresabin147@gmail.com"
+  },
+  {
+    "CustomerId": 4,
+    "Name": "Gulce",
+    "Address": "Roskdile",
+    "PhoneNumber": 543527044,
+    "Email": "glcyayla@gmail.com"
+  },
+  {
+    "CustomerId": 5,
+    "Name": "Viktor",
+    "Address": "Flimtom",
+    "PhoneNumber": 71556794,
+    "Email": "viktor.bonev02@gmail.com"
+  }
+]
+  
+
