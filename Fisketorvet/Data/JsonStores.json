@@ -14,5 +14,13 @@
     "TelContact": 541,
     "Offer": null,
     "ImageName": null
+  },
+  {
+    "StoreId": 3,
+    "StoreName": "huh",
+    "TheStoreType": "1",
+    "TelContact": 12345678,
+    "Offer": null,
+    "ImageName": "hm.jpg"
   }
 ]

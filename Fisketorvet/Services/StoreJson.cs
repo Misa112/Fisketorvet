@@ -19,6 +19,22 @@ namespace Fisketorvet.Services
         public void CreateStore(Store store)
         {
             List<Store> stores = AllStores();
+
+            List<int> storeIds = new List<int>();
+            foreach (var s in stores)
+            {
+                storeIds.Add(s.StoreId);
+            }
+            if (storeIds.Count != 0)
+            {
+                int start = storeIds.Max();
+                store.StoreId = start + 1;
+            }
+            else
+            {
+                store.StoreId = 1;
+            }
+
             stores.Add(store);
             JsonFileWritter.WriteToJson(stores, JsonFileName);
         }
@@ -51,30 +67,6 @@ namespace Fisketorvet.Services
             }
             return new Store();
         }
-
-        //public Country GetCountry(string code)
-        //{
-        //    foreach (var c in GetAllCountries())
-        //    {
-        //        if (c.Code == code)
-        //            return c;
-        //    }
-        //    return new Country();
-        //}
-        //public void DeleteCountry(string code)
-        //{
-        //    List<Country> countries = GetAllCountries().ToList();
-
-        //    foreach (var c in countries)
-        //    {
-        //        if (c.Code == code)
-        //        {
-        //            countries.Remove(c);
-        //            break;
-        //        }
-        //    }
-        //    JsonFileCountryWritter.WriteToJson(countries, JsonFileName);
-        //}
 
         public void DeleteStore(int id)
         {

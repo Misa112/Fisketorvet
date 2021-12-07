@@ -8,11 +8,14 @@
 
 <form method="post">
 
-    <div class="form-group">
+    <div asp-validation-summary="None " class="text-danger">
+    </div>
+
+    @*<div class="form-group">
         <label asp-for="@Model.Store.StoreId" class="control-label"> Id </label>
         <input asp-for="@Model.Store.StoreId" class="form-control" />
         <span asp-validation-for="@Model.Store.StoreId" class="text-danger"></span>
-    </div>
+    </div>*@
     <div class="form-group">
         <label asp-for="@Model.Store.StoreName" class="control-label">Name </label>
         <input asp-for="@Model.Store.StoreName" class="form-control" />
@@ -27,7 +30,7 @@
             <option value="2">Shop</option>
         </select>
         <span asp-validation-for="@Model.Store.TheStoreType" class="text-danger"></span>
-    </div>    
+    </div>
     <div class="form-group">
         <label asp-for="@Model.Store.TelContact" class="control-label"> Contact Number </label>
         <input asp-for="@Model.Store.TelContact" class="form-control" />

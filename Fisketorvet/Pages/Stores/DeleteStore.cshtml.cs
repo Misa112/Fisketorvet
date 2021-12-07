@@ -14,7 +14,9 @@ namespace Fisketorvet.Pages.Stores
     {
         [BindProperty]
         public Store Store { get; set; }
+
         private IStoreRepository catalog;
+
         public DeleteStoreModel(IStoreRepository repository)
         {
             catalog = repository;
