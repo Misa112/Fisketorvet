@@ -8,11 +8,16 @@ namespace Fisketorvet.Interfaces
 {
     public interface IStoreRepository
     {
-        Dictionary<int, Store> AllStores();
-        Dictionary<int, Store> FilterStore(string criteria);
+        List<Store> AllStores();
+
         void CreateStore(Store store);
+
+        List<Store> FilterStore(string criteria);
+        
         Store GetStore(int id);
+
         void UpdateStore(Store store);
+
         void DeleteStore(Store store);
     }
 }

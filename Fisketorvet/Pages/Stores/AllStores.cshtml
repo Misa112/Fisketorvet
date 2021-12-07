@@ -21,6 +21,7 @@
     <thead>
         <tr>
             <th> Name </th>
+            <th> type </th>
             <th> Contact </th>
             <th> Image </th>
         </tr>
@@ -29,15 +30,15 @@
         @foreach (var store in Model.Stores)
         {
         <tr>
-            <td>@store.Value.StoreName</td>
-            <td>@store.Value.TelContact</td>
+            <td>@store.StoreName</td>
+            <td>@store.TheStoreType</td>
+            <td>@store.TelContact</td>
             <td>
-                <img src="~/Images/StoresImages/@store.Value.ImageName" width="130" height="65">
+                <img src="~/Images/StoresImages/@store.ImageName" width="130" height="65">
             </td>
             <td>
                 <p>
-                    <a asp-page="EditStore" asp-route-id="@store.Key">Edit</a> |
-                    <a asp-page="DeleteStore" asp-route-id="@store.Key">Delete</a>
+                    <a asp-page="DeleteStore" asp-route-id="@store.StoreId">Delete</a>
                 </p>
             </td>
         </tr>

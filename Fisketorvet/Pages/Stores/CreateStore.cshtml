@@ -19,16 +19,26 @@
         <span asp-validation-for="@Model.Store.StoreName" class="text-danger"></span>
 
     </div>
-    <div class="form-group">
-        <label asp-for="@Model.Store.TheStoreType" class="control-label">Type of Store</label>
-        <select asp-for="@Model.Store.TheStoreType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store.StoreType>())" class="form-control"></select>
+    <div class="form-group col-md-4">
+        <label asp-for="@Model.Store.TheStoreType" class="control-lable"></label>
+        <select asp-for="@Model.Store.TheStoreType" class="custom-select">
+            <option value="">Select type of Store</option>
+            <option value="1">Restaurant</option>
+            <option value="2">Shop</option>
+        </select>
         <span asp-validation-for="@Model.Store.TheStoreType" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="@Model.Store.TheShopType" class="control-label">Type of Shop</label>
-        <select asp-for="@Model.Store.TheShopType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store.ShopType>())" class="form-control"></select>
-        <span asp-validation-for="@Model.Store.TheShopType" class="text-danger"></span>
-    </div>
+    @*<div class="form-group">
+        <label asp-for="@Model.Store.TheStoreType" class="control-label">Type of Store</label>
+        <select asp-for="@Model.Store.TheStoreType" asp-items="@(Html.DropDownList("bb", IEnumerable<SelectListItem> selectList, List<Store> Stores, "Select Type", "Restaurant", "Shop")
+    )" class="form-control"></select>
+        <span asp-validation-for="@Model.Store.TheStoreType" class="text-danger"></span>
+    </div>*@
+    @*<div class="form-group">
+            <label asp-for="@Model.Store.TheShopType" class="control-label">Type of Shop</label>
+            <select asp-for="@Model.Store.TheShopType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store.ShopType>())" class="form-control"></select>
+            <span asp-validation-for="@Model.Store.TheShopType" class="text-danger"></span>
+        </div>*@
     <div class="form-group">
         <label asp-for="@Model.Store.TelContact" class="control-label"> Contact Number </label>
         <input asp-for="@Model.Store.TelContact" class="form-control" />

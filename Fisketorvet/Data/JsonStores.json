@@ -1,0 +1,26 @@
+[
+  {
+    "StoreId": 1,
+    "StoreName": "Cheese Pizza",
+    "TheStoreType": "R",
+    "TelContact": 123,
+    "Offer": null,
+    "ImageName": null
+  },
+  {
+    "StoreId": 2,
+    "StoreName": "BEAUTY HAIR",
+    "TheStoreType": "B",
+    "TelContact": 541,
+    "Offer": null,
+    "ImageName": null
+  },
+  {
+    "StoreId": 3,
+    "StoreName": "fdf",
+    "TheStoreType": "1",
+    "TelContact": 12345678,
+    "Offer": null,
+    "ImageName": "hm.jpg"
+  }
+]

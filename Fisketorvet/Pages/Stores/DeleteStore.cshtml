@@ -18,15 +18,20 @@
         <span asp-validation-for="@Model.Store.StoreName" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Store.TheStoreType" class="control-label">Type of Store</label>
-        <select asp-for="@Model.Store.TheStoreType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store.StoreType>())" class="form-control"></select>
+        <label asp-for="@Model.Store.TheStoreType" class="control-label">Name </label>
+        <input asp-for="@Model.Store.TheStoreType" class="form-control" />
         <span asp-validation-for="@Model.Store.TheStoreType" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <label asp-for="@Model.Store.TheShopType" class="control-label">Type of Shop</label>
-        <select asp-for="@Model.Store.TheShopType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store.ShopType>())" class="form-control"></select>
-        <span asp-validation-for="@Model.Store.TheShopType" class="text-danger"></span>
-    </div>
+    @*<div class="form-group">
+            <label asp-for="@Model.Store.TheStoreType" class="control-label">Type of Store</label>
+            <select asp-for="@Model.Store.TheStoreType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store..StoreType>())" class="form-control"></select>
+            <span asp-validation-for="@Model.Store.TheStoreType" class="text-danger"></span>
+        </div>*@
+    @*<div class="form-group">
+            <label asp-for="@Model.Store.TheShopType" class="control-label">Type of Shop</label>
+            <select asp-for="@Model.Store.TheShopType" asp-items="@(Html.GetEnumSelectList<Fisketorvet.Models.Store.ShopType>())" class="form-control"></select>
+            <span asp-validation-for="@Model.Store.TheShopType" class="text-danger"></span>
+        </div>*@
     <div class="form-group">
         <label asp-for="@Model.Store.TelContact" class="control-label"> Contact Number </label>
         <input asp-for="@Model.Store.TelContact" class="form-control" />
