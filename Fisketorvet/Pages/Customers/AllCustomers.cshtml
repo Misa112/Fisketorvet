@@ -38,14 +38,14 @@
             @foreach (var customer in Model.Customers)
             {
              <tr>
-                <td>@customer.Value.CustomerId </td>
-                <td> @customer.Value.Name</td>
-                <td>@customer.Value.Address </td>
-                <td>@customer.Value.PhoneNumber </td>
-                <td>@customer.Value.Email </td>
+                <td>@customer.CustomerId </td>
+                <td> @customer.Name</td>
+                <td>@customer.Address </td>
+                <td>@customer.PhoneNumber </td>
+                <td>@customer.Email </td>
                 <td>
-                    <a asp-page="EditCustomer" asp-route-id="@customer.Key">Edit</a>
-                    <a asp-page="DeleteCustomer" asp-route-id="@customer.Key">Delete</a>
+                    <a asp-page="EditCustomer" asp-route-id="@customer.CustomerId">Edit</a>
+                    <a asp-page="DeleteCustomer" asp-route-id="@customer.CustomerId">Delete</a>
                 </td>
              </tr>
             }

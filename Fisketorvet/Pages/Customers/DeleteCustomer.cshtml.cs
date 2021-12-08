@@ -2,23 +2,23 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Fisketorvet.Catalogs;
 using Fisketorvet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Fisketorvet.Interfaces;
 
 namespace Fisketorvet.Pages.Customers
 {
     public class DeleteCustomerModel : PageModel
     {
-        private CustomerCatalog catalog;
+        private ICustomerRepository catalog;
 
         [BindProperty]
         public Customer Customer { get; set; }
 
-        public DeleteCustomerModel()
+        public DeleteCustomerModel(ICustomerRepository catalogService)
         {
-            catalog = CustomerCatalog.Instance;
+            catalog = catalogService;
         }
         public void OnGet(int id)
         {

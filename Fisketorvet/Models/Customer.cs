@@ -8,7 +8,7 @@ namespace Fisketorvet.Models
 {
     public class Customer
     {
-        [Required]
+       
         public int CustomerId { get; set; }
 
         [Required]

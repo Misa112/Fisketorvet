@@ -5,22 +5,28 @@ using System.Threading.Tasks;
 using Fisketorvet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Fisketorvet.Interfaces;
 
 namespace Fisketorvet.Pages.Customers
 {
     public class AllCustomersModel : PageModel
     {
-        public Dictionary<int, Customer> Customers { get; set; }
+        public List<Customer> Customers { get; private set; }
+        private ICustomerRepository catalog;
 
         
-        public CustomerCatalog catalog;
+
 
         [BindProperty(SupportsGet = true)]
         public string FilterCriteria { get; set; }
 
-        public AllCustomersModel()
+        public AllCustomersModel(ICustomerRepository catalogService)
         {
+
+            catalog = catalogService;
+
             
+
         }
         public IActionResult OnGet()
         {
