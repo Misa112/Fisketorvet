@@ -1,0 +1,52 @@
+[
+  {
+    "ProductId": 1,
+    "ProductName": "Mango Bath Blend",
+    "Store": "The BODY STORE",
+    "Price": 75,
+    "ImageName": "MANGO.jpg"
+  },
+  {
+    "ProductId": 2,
+    "ProductName": "Strawberry Lip Butter",
+    "Store": "The BODY STORE",
+    "Price": 50,
+    "ImageName": "STRAWBERRY.jpg"
+  },
+  {
+    "ProductId": 3,
+    "ProductName": "Milk and Honey",
+    "Store": "BOOK & IDEA",
+    "Price": 149.95,
+    "ImageName": "milk-and-honey.jpg"
+  },
+  {
+    "ProductId": 4,
+    "ProductName": "The Sun and Her Flowers",
+    "Store": "BOOK & IDEA",
+    "Price": 169.95,
+    "ImageName": "the-sun-and-her-flowers.jpg"
+  },
+  {
+    "ProductId": 5,
+    "ProductName": "Egg Cooker",
+    "Store": "THE ELECTRICITY GIANT",
+    "Price": 249.95,
+    "ImageName": "eggcooker.jpg"
+  },
+  {
+    "ProductId": 6,
+    "ProductName": "Galaxy Z Flip3",
+    "Store": "THE ELECTRICITY GIANT",
+    "Price": 8199.95,
+    "ImageName": "samsungg.jpg"
+  },
+  {
+    "ProductId": 7,
+    "ProductName": "Milk and Honey",
+    "Store": "THE ELECTRICITY GIANT",
+    "Price": 149.95,
+    "ImageName": "milk-and-honey.jpg"
+  }
+
+]

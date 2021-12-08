@@ -13,7 +13,8 @@ namespace Fisketorvet.Models
         [StringLength(20, ErrorMessage = "Name of the product can not be longer than 20 characters.")]
         public string ProductName { get; set; }
         [Required]
-        public int Price { get; set; }
+        public double Price { get; set; }
+        public string Store { get; set; }
         public string ImageName { get; set; }
     }
 }

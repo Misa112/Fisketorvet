@@ -22,5 +22,11 @@ namespace Fisketorvet.Helpers
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(stores, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(JsonFileName, output);
         }
+
+        public static void WriteToJsonProduct(List<Product> products, string JsonFileName)
+        {
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(products, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(JsonFileName, output);
+        }
     }
 }

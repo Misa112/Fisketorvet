@@ -29,6 +29,7 @@ namespace Fisketorvet
 
             services.AddTransient<ICustomerRepository, CustomerJson>();
             services.AddTransient<IStoreRepository, StoreJson>();
+            services.AddTransient<IProductRepository, ProductJson>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
