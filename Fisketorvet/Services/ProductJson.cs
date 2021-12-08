@@ -82,6 +82,20 @@ namespace Fisketorvet.Services
             }
             JsonFileWritter.WriteToJsonProduct(products, JsonFileName);
         }
+
+        public List<Product> SearchProductByStore(string storename)
+        {
+            List<Product> searchedList = new List<Product>();
+
+            foreach (var p in AllProducts().ToList())
+            {
+                if(p.Store == storename)
+                {
+                    searchedList.Add(p);
+                }
+            }
+            return searchedList;
+        }
     }
 }
 

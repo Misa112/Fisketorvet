@@ -1,7 +1,7 @@
 ﻿@page "{id}"
 @model Fisketorvet.Pages.Stores.DeleteStoreModel
 @{
-    ViewData["Title"] = "DeletePage";
+    ViewData["Title"] = "DeleteStore";
 }
 
 <h1>Delete Store</h1>
@@ -18,7 +18,7 @@
         <span asp-validation-for="@Model.Store.StoreName" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="@Model.Store.TheStoreType" class="control-label">Name </label>
+        <label asp-for="@Model.Store.TheStoreType" class="control-label">Type of Store </label>
         <input asp-for="@Model.Store.TheStoreType" class="form-control" />
         <span asp-validation-for="@Model.Store.TheStoreType" class="text-danger"></span>
     </div>

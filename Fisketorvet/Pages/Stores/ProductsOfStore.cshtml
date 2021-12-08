@@ -1,0 +1,37 @@
+﻿@page
+@model Fisketorvet.Pages.Stores.ProductsOfStoreModel
+@{
+    ViewData["Title"] = "ProductsOfStore";
+}
+
+<h1>All Products of the store</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Store </th>
+            <th> Price </th>
+            <th> Image </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Products)
+        {
+        <tr>
+            <td>@p.ProductName</td>
+            <td>@p.ProductName</td>
+            <td>@p.Price</td>
+            <td>
+                <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
+            </td>
+            <td>   
+                <a asp-page="/Products/DeleteProduct" asp-route-id="@p.ProductId">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <a asp-page="AllStores">Back to List of Stores</a>
+</div>

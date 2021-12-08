@@ -17,5 +17,6 @@ namespace Fisketorvet.Interfaces
         Product GetProduct(int id);
 
         void DeleteProduct(int id);
+        List<Product> SearchProductByStore(string storeName);
     }
 }

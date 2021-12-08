@@ -29,19 +29,20 @@
     <tbody>
         @foreach (var store in Model.Stores)
         {
-            <tr>
-                <td>@store.StoreName</td>
-                <td>@store.Offer</td>
-                <td>@store.TelContact</td>
-                <td>
-                    <img src="~/Images/StoresImages/@store.ImageName" width="130" height="65">
-                </td>
-                <td>
-                    <p>
-                        <a asp-page="DeleteStore" asp-route-id="@store.StoreId">Delete</a>
-                    </p>
-                </td>
-            </tr>
+        <tr>
+            <td>@store.StoreName</td>
+            <td>@store.Offer</td>
+            <td>@store.TelContact</td>
+            <td>
+                <img src="~/Images/StoresImages/@store.ImageName" width="130" height="65">
+            </td>
+            <td>
+                <p>
+                    <a asp-page="ProductsOfStore" asp-route-storename="@store.StoreName">Products of store</a> |
+                    <a asp-page="DeleteStore" asp-route-id="@store.StoreId">Delete</a>            
+            </p>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
