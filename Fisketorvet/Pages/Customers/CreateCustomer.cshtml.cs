@@ -13,12 +13,15 @@ namespace Fisketorvet.Pages.Customers
     {
         private ICustomerRepository catalog;
 
+
         [BindProperty]
         public Customer Customer { get; set; }
 
         public CreateCustomerModel(ICustomerRepository catalogService)
         {
+
             catalog = catalogService;
+
         }
 
         public void OnGet()
@@ -32,7 +35,7 @@ namespace Fisketorvet.Pages.Customers
             {
                 return Page();
             }
-            catalog.CreateCustomer(Customer);
+            //catalog.CreateCustomer(Customer);
             return RedirectToPage("AllCustomers");
         }
     }

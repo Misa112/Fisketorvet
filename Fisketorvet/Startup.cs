@@ -1,4 +1,3 @@
-using Fisketorvet.Catalogs;
 using Fisketorvet.Interfaces;
 using Fisketorvet.Services;
 using Microsoft.AspNetCore.Builder;
@@ -27,7 +26,13 @@ namespace Fisketorvet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
             services.AddTransient<ICustomerRepository, CustomerJson>();
+
+            //services.AddSingleton<IStoreRepository, StoreJson>();
+            services.AddTransient<IStoreRepository, StoreJson>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

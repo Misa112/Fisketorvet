@@ -12,18 +12,25 @@ namespace Fisketorvet.Pages.Customers
     public class AllCustomersModel : PageModel
     {
         public List<Customer> Customers { get; private set; }
-
         private ICustomerRepository catalog;
+
+        
+
 
         [BindProperty(SupportsGet = true)]
         public string FilterCriteria { get; set; }
 
         public AllCustomersModel(ICustomerRepository catalogService)
         {
+
             catalog = catalogService;
+
+            
+
         }
         public IActionResult OnGet()
         {
+            
             Customers = catalog.AllCustomers();
 
             if (!string.IsNullOrEmpty(FilterCriteria))
