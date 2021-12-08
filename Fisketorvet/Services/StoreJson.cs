@@ -14,7 +14,7 @@ namespace Fisketorvet.Services
 
         public List<Store> AllStores()
         {
-            return JsonFileReader.ReadJson(JsonFileName);
+            return JsonFileReader.ReadJsonStore(JsonFileName);
         }
         public void CreateStore(Store store)
         {
@@ -36,7 +36,7 @@ namespace Fisketorvet.Services
             }
 
             stores.Add(store);
-            JsonFileWritter.WriteToJson(stores, JsonFileName);
+            JsonFileWritter.WriteToJsonStore(stores, JsonFileName);
         }
 
         public List<Store> FilterStore(string criteria)
@@ -80,7 +80,7 @@ namespace Fisketorvet.Services
                     break;
                 }
             }            
-            JsonFileWritter.WriteToJson(stores, JsonFileName);
+            JsonFileWritter.WriteToJsonStore(stores, JsonFileName);
         }      
     }
 }
