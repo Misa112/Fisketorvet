@@ -35,7 +35,7 @@ namespace Fisketorvet.Pages.Customers
             {
                 return Page();
             }
-            //catalog.CreateCustomer(Customer);
+            catalog.CreateCustomer(Customer);
             return RedirectToPage("AllCustomers");
         }
     }
