@@ -52,9 +52,9 @@ namespace Fisketorvet.Catalogs
             return stores;
         }
         public Dictionary<int, Store> FilterStore(string criteria)
-        {            
+        {
             Dictionary<int, Store> filteredStores = new Dictionary<int, Store>();
-            if(criteria!=null)
+            if (criteria != null)
             {
                 foreach (var item in stores.Values)
                 {
@@ -63,12 +63,12 @@ namespace Fisketorvet.Catalogs
                         filteredStores.Add(item.StoreId, item);
                     }
                 }
-            }            
+            }
             return filteredStores;
         }
         public void CreateStore(Store store)
         {
-            if(!stores.ContainsKey(store.StoreId))
+            if (!stores.ContainsKey(store.StoreId))
             {
                 stores.Add(store.StoreId, store);
             }
@@ -79,14 +79,14 @@ namespace Fisketorvet.Catalogs
         }
         public void UpdateStore(Store store)
         {
-            if(store != null)
+            if (store != null)
             {
                 stores[store.StoreId] = store;
             }
         }
         public void DeleteStore(Store store)
         {
-            if(store != null)
+            if (store != null)
             {
                 stores.Remove(store.StoreId);
             }

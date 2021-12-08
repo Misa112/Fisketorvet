@@ -3,37 +3,56 @@
     "CustomerId": 1,
     "Name": "Saugat",
     "Address": "Tulipanvej 24",
-    "PhoneNumber": 71555810,
+    "PhoneNumber": "71555810",
     "Email": "Saugatkhatiwada10@gmail.com"
   },
   {
     "CustomerId": 2,
     "Name": "Michaela",
     "Address": "Trekoner",
-    "PhoneNumber": 776886499,
+    "PhoneNumber": "776886499",
     "Email": "macejovskamicha@gmail.com"
   },
   {
     "CustomerId": 3,
     "Name": "Sabin",
     "Address": "Madumvej",
-    "PhoneNumber": 31862094,
+    "PhoneNumber": "31862094",
     "Email": "ghimiresabin147@gmail.com"
   },
   {
     "CustomerId": 4,
     "Name": "Gulce",
     "Address": "Roskdile",
-    "PhoneNumber": 543527044,
+    "PhoneNumber": "543527044",
     "Email": "glcyayla@gmail.com"
   },
   {
     "CustomerId": 5,
     "Name": "Viktor",
     "Address": "Flimtom",
-    "PhoneNumber": 71556794,
+    "PhoneNumber": "71556794",
     "Email": "viktor.bonev02@gmail.com"
+  },
+  {
+    "CustomerId": 6,
+    "Name": "Sabin Bhandari",
+    "Address": "Madumvej",
+    "PhoneNumber": "71556794",
+    "Email": "sb@gmail.com"
+  },
+  {
+    "CustomerId": 7,
+    "Name": "Sushil Ghimire",
+    "Address": "Bellahoj",
+    "PhoneNumber": "1234567",
+    "Email": "sushil@asdfadsf"
+  },
+  {
+    "CustomerId": 8,
+    "Name": "Sumi",
+    "Address": "Madumvej",
+    "PhoneNumber": "2365745",
+    "Email": "sumi@gmail.com"
   }
 ]
-  
-
