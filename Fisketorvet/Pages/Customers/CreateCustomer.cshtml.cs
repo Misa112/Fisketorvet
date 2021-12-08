@@ -24,9 +24,9 @@ namespace Fisketorvet.Pages.Customers
 
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            //return Page();
+            return Page();
         }
 
         public IActionResult OnPost()
