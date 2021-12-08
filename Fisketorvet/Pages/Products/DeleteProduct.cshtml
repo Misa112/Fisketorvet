@@ -1,0 +1,39 @@
+﻿@page "{id}"
+@model Fisketorvet.Pages.Products.DeleteProductModel
+@{
+    ViewData["Title"] = "DeleteProduct";
+}
+<h1>Delete Product</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="@Model.Product.ProductId" class="control-label"> Id </label>
+        <input asp-for="@Model.Product.ProductId" class="form-control" />
+        <span asp-validation-for="@Model.Product.ProductId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Product.ProductName" class="control-label">Name </label>
+        <input asp-for="@Model.Product.ProductName" class="form-control" />
+        <span asp-validation-for="@Model.Product.ProductName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Product.Price" class="control-label"> Price </label>
+        <input asp-for="@Model.Product.Price" class="form-control" />
+        <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Product.Store" class="control-label"> Store </label>
+        <input asp-for="@Model.Product.Store" class="form-control" />
+        <span asp-validation-for="@Model.Product.Store" class="text-danger"></span>
+    </div>
+    
+    <div class="form-group">
+        <label asp-for="@Model.Product.ImageName" class="control-label"> Image name </label>
+        <input asp-for="@Model.Product.ImageName" class="form-control" />
+        <span asp-validation-for="@Model.Product.ImageName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-primary" />
+    </div>
+</form>

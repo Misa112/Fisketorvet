@@ -1,0 +1,38 @@
+﻿@page
+@model Fisketorvet.Pages.Products.CreateProductModel
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h1>Create Product</h1>
+
+<form method="post">
+
+    <div asp-validation-summary="None " class="text-danger">
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Product.ProductName" class="control-label">Name </label>
+        <input asp-for="@Model.Product.ProductName" class="form-control" />
+        <span asp-validation-for="@Model.Product.ProductName" class="text-danger"></span>
+
+    </div>
+    <div class="form-group col-md-4">
+        <label asp-for="@Model.Product.Store" class="control-lable"> Store </label>
+        <input asp-for="@Model.Product.Store" class="form-control" />
+        <span asp-validation-for="@Model.Product.Store" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Product.Price" class="control-label"> Price </label>
+        <input asp-for="@Model.Product.Price" class="form-control" />
+        <span asp-validation-for="@Model.Product.Price" class="text-danger"></span>
+    </div>    
+    <div class="form-group">
+        <label asp-for="@Model.Product.ImageName" class="control-label"> Image name </label>
+        <input asp-for="@Model.Product.ImageName" class="form-control" />
+        <span asp-validation-for="@Model.Product.ImageName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>

@@ -28,11 +28,8 @@ namespace Fisketorvet
             services.AddRazorPages();
 
             services.AddTransient<ICustomerRepository, CustomerJson>();
-
-            //services.AddSingleton<IStoreRepository, StoreJson>();
             services.AddTransient<IStoreRepository, StoreJson>();
-
-
+            services.AddTransient<IProductRepository, ProductJson>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
