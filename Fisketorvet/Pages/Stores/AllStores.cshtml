@@ -38,8 +38,9 @@
             </td>
             <td>
                 <p>
-                    <a asp-page="DeleteStore" asp-route-id="@store.StoreId">Delete</a>
-                </p>
+                    <a asp-page="ProductsOfStore" asp-route-storename="@store.StoreName">Products of store</a> |
+                    <a asp-page="DeleteStore" asp-route-id="@store.StoreId">Delete</a>            
+            </p>
             </td>
         </tr>
         }

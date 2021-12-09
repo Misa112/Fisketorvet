@@ -2,41 +2,34 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Fisketorvet.Interfaces;
 using Fisketorvet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Fisketorvet.Interfaces;
 
-namespace Fisketorvet.Pages.Customers
+namespace Fisketorvet.Pages.Products
 {
-    public class CreateCustomerModel : PageModel
-    {
-        private ICustomerRepository catalog;
-
-
+    public class CreateProductModel : PageModel
+    {        
+        private IProductRepository catalog;
         [BindProperty]
-        public Customer Customer { get; set; }
-
-        public CreateCustomerModel(ICustomerRepository catalogService)
+        public Product Product { get; set; }
+        public CreateProductModel(IProductRepository repository)
         {
-
-            catalog = catalogService;
-
+            catalog = repository;
         }
-
         public IActionResult OnGet()
         {
             return Page();
         }
-
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            catalog.CreateCustomer(Customer);
-            return RedirectToPage("AllCustomers");
-        }
-    }
+            catalog.CreateProduct(Product);
+            return RedirectToPage("AllProducts");
+        }    
+    }    
 }
