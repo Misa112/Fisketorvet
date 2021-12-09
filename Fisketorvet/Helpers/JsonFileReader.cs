@@ -23,14 +23,18 @@ namespace Fisketorvet.Helpers
         {
             string jsonString = File.ReadAllText(JsonFileName);
             return JsonConvert.DeserializeObject<List<Store>>(jsonString);
-
         }
 
         public static List<Product> ReadJsonProduct(string JsonFileName)
         {
             string jsonString = File.ReadAllText(JsonFileName);
             return JsonConvert.DeserializeObject<List<Product>>(jsonString);
+        }
 
+        public static List<Order> ReadJsonOrder(string JsonFileName)
+        {
+            string jsonString = File.ReadAllText(JsonFileName);
+            return JsonConvert.DeserializeObject<List<Order>>(jsonString);
         }
 
     }

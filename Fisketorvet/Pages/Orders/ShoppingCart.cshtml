@@ -1,0 +1,49 @@
+﻿@page
+@model Fisketorvet.Pages.Orders.ShoppingCartModel
+@{
+}
+
+<h1>Shopping Cart</h1>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th> Name </th>
+            <th> Store </th>
+            <th> Price </th>
+            <th> Image </th>
+        </tr>
+    </thead>
+    @if (Model.OrderedProducts.Count != 0)
+    {
+        <tbody>
+            @foreach (var p in Model.OrderedProducts)
+            {
+                <tr>
+                    <td>@p.ProductName</td>
+                    <td>@p.Store</td>
+                    <td>@p.Price.ToString()</td>
+                    <td>
+                        <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
+                    </td>
+                    <td>
+                        <form method="post">
+                            <button asp-page-handler="Delete" asp-route-id="@p.ProductId">Delete From Chart</button>
+                        </form>
+                    </td>
+                </tr>
+}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td> @Model.CartService.TotalPrice().ToString() </td>
+            </tr>
+        </tfoot>
+}
+
+</table>
+<div class="text-center">
+    <a asp-page="/Products/AllProducts" class="btn btn-primary">Continue shopping</a>
+    <a asp-page="/Orders/CheckOut" class="btn btn-primary">Check Out</a>
+</div>
+
+
