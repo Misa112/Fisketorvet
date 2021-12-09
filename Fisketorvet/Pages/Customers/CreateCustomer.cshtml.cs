@@ -6,6 +6,7 @@ using Fisketorvet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Fisketorvet.Interfaces;
+using Fisketorvet.ViewModels;
 
 namespace Fisketorvet.Pages.Customers
 {
@@ -15,7 +16,7 @@ namespace Fisketorvet.Pages.Customers
 
 
         [BindProperty]
-        public Customer Customer { get; set; }
+        public CustomerViewModel CustomerViewModel { get; set; }
 
         public CreateCustomerModel(ICustomerRepository catalogService)
         {
@@ -35,8 +36,21 @@ namespace Fisketorvet.Pages.Customers
             {
                 return Page();
             }
-            catalog.CreateCustomer(Customer);
-            return RedirectToPage("AllCustomers");
+            if (CustomerViewModel.Password == CustomerViewModel.ConfirmPassword)
+            {
+                Customer customer = new Customer();
+                customer.Name = CustomerViewModel.Name;
+                customer.Address = CustomerViewModel.Address;
+                customer.PhoneNumber = CustomerViewModel.PhoneNumber;
+                customer.Email = CustomerViewModel.Email;
+                customer.Password = CustomerViewModel.Password;
+                customer.IsAdmin = CustomerViewModel.IsAdmin;
+                catalog.CreateCustomer(customer);
+                return RedirectToPage("../Users/Login");
+            }
+            else {
+                return RedirectToPage("CreateCustomer");
+            }
         }
     }
 }
