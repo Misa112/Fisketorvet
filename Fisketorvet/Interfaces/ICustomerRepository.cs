@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fisketorvet.Models;
 using Fisketorvet.Interfaces;
+using Fisketorvet.ViewModels;
 
 namespace Fisketorvet.Interfaces
 {

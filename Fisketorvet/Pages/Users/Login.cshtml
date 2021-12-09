@@ -8,9 +8,9 @@
             <div>
                 <form method="post">
                     <div class="form-group">
-                        <label class="col-form-label-sm mb-0" asp-for="Username">User Name:</label>
-                        <input class="form-control" type="email" asp-for="Username" />
-                        <span asp-validation-for="Username" class="text-danger"></span>
+                        <label class="col-form-label-sm mb-0" asp-for="Email">Email:</label>
+                        <input class="form-control" type="email" asp-for="Email" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                     <div class="form-group">
                         <label class="col-form-label-sm mb-0" asp-for="Password">Password</label>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="row mt-3 justify-content-center">
                         <div class="col text-center">
-                            <a asp-page="/Customer/CreateCustomer" class="btn btn-outline-dark">Sign up</a>
+                            <a asp-page="../Customers/CreateCustomer" class="btn btn-outline-dark">Sign up</a>
                         </div>
                     </div>
                 </form>

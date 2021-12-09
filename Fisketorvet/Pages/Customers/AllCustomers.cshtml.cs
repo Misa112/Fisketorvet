@@ -22,11 +22,7 @@ namespace Fisketorvet.Pages.Customers
 
         public AllCustomersModel(ICustomerRepository catalogService)
         {
-
             catalog = catalogService;
-
-            
-
         }
         public IActionResult OnGet()
         {

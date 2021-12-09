@@ -9,7 +9,7 @@ namespace Fisketorvet.Pages.Users
 {
     public class LoginModel : PageModel
     {
-        public string Username { get; set; }
+        public string Email { get; set; }
 
         public string Password { get; set; }
         public void OnGet()
