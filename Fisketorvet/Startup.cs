@@ -30,6 +30,7 @@ namespace Fisketorvet
             services.AddTransient<ICustomerRepository, CustomerJson>();
             services.AddTransient<IStoreRepository, StoreJson>();
             services.AddTransient<IProductRepository, ProductJson>();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +53,7 @@ namespace Fisketorvet
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -19,6 +19,8 @@ namespace Fisketorvet.Interfaces
         Customer GetCustomer(int id);
 
         void DeleteCustomer(Customer c);
+
+        Customer GetValidUser(string email, string pass);
     }
 }
 
