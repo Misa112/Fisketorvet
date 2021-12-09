@@ -109,6 +109,35 @@ namespace Fisketorvet.Services
             return new Customer();
         }
 
+        public Customer GetValidUser(string email, string pass)
+        {
+            List<Customer> customers = AllCustomers();
+            
+            Customer loggedIn = new Customer();
+
+            if (customers != null)
+            {
+                foreach (var customer in customers)
+                {
+                    if (customer.Email == email)
+                    {
+                        string jsonPassword = customer.Password;
+                        Microsoft.AspNetCore.Identity.PasswordHasher<string> pw = new PasswordHasher<string>();
+                        var verificationResult = pw.VerifyHashedPassword(email, jsonPassword, pass);
+                        if (verificationResult == PasswordVerificationResult.Success)
+                            loggedIn = customer;
+                        else
+                            loggedIn = null;
+                        //return loggedIn;
+                    }
+                }
+            }
+            else {
+                loggedIn = null;
+            }
+            return loggedIn;
+        }
+
         private string PasswordHash(string email, string password)
         {
             PasswordHasher<string> pw = new PasswordHasher<string>();
