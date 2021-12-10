@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Fisketorvet.Helpers;
 using Fisketorvet.Interfaces;
 using Fisketorvet.Models;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -12,9 +15,23 @@ namespace Fisketorvet.Services
 {
     public class CustomerJson : ICustomerRepository
     {
-        string JsonFileName = @"C:\Users\micha\OneDrive\Desktop\Fisketorvet\Fisketorvet\Data\JsonCustomer.json";
+        //public IWebHostEnvironment WebHostEnvironment { get; }
 
-        public List<Customer> AllCustomers() {
+        //public CustomerJson(IWebHostEnvironment webHostEnvironment)
+        //{
+        //    WebHostEnvironment = webHostEnvironment;
+        //}
+
+        //private string JsonFileName
+        //{
+        //    get { return Path.Combine(WebHostEnvironment.WebRootPath, "Data", "JsonCustomer.json"); }
+        //}
+
+
+       string JsonFileName = @"C:\Users\sauga\source\repos\Fisketorvet\Fisketorvet\Data\JsonCustomer.json";
+
+        public List<Customer> AllCustomers() 
+        {
             return JsonFileReader.ReadJson(JsonFileName);
         }
 
@@ -23,20 +40,23 @@ namespace Fisketorvet.Services
             List<Customer> customers = AllCustomers();
 
             List<int> cutomerIds = new List<int>();
-            foreach (var c in customers)
-            {
-                cutomerIds.Add(c.CustomerId);
-            }
-            if (cutomerIds.Count != 0)
-            {
-                int start = cutomerIds.Max();
-                customer.CustomerId = start + 1;
-            }
+            if (customers != null) {
+                foreach (var c in customers)
+                {
+                    cutomerIds.Add(c.CustomerId);
+                }
+                if (cutomerIds.Count != 0)
+                {
+                    int start = cutomerIds.Max();
+                    customer.CustomerId = start + 1;
+                }
+            }   
             else
             {
+                customers = new List<Customer>();
                 customer.CustomerId = 1;
             }
-
+            customer.Password = PasswordHash(customer.Email, customer.Password);
             customers.Add(customer);
             JsonFileWritter.WriteToJson(customers, JsonFileName);
         }
@@ -87,6 +107,42 @@ namespace Fisketorvet.Services
                 }
             }
             return new Customer();
+        }
+
+        public Customer GetValidUser(string email, string pass)
+        {
+            List<Customer> customers = AllCustomers();
+            
+            Customer loggedIn = new Customer();
+
+            if (customers != null)
+            {
+                foreach (var customer in customers)
+                {
+                    if (customer.Email == email)
+                    {
+                        string jsonPassword = customer.Password;
+                        Microsoft.AspNetCore.Identity.PasswordHasher<string> pw = new PasswordHasher<string>();
+                        var verificationResult = pw.VerifyHashedPassword(email, jsonPassword, pass);
+                        if (verificationResult == PasswordVerificationResult.Success)
+                            loggedIn = customer;
+                        else
+                            loggedIn = null;
+                        //return loggedIn;
+                    }
+                }
+            }
+            else {
+                loggedIn = null;
+            }
+            return loggedIn;
+        }
+
+        private string PasswordHash(string email, string password)
+        {
+            PasswordHasher<string> pw = new PasswordHasher<string>();
+            string passwordHashed = pw.HashPassword(email, password);
+            return passwordHashed;
         }
     }
 }

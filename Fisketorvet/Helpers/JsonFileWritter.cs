@@ -15,6 +15,7 @@ namespace Fisketorvet.Helpers
         {
             string output = Newtonsoft.Json.JsonConvert.SerializeObject(customers,
                                                                Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(JsonFileName, output);
         }
 
         public static void WriteToJsonStore(List<Store> stores, string JsonFileName)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Fisketorvet.Models;
 using Fisketorvet.Interfaces;
+using Fisketorvet.ViewModels;
 
 namespace Fisketorvet.Interfaces
 {
@@ -18,6 +19,8 @@ namespace Fisketorvet.Interfaces
         Customer GetCustomer(int id);
 
         void DeleteCustomer(Customer c);
+
+        Customer GetValidUser(string email, string pass);
     }
 }
 
