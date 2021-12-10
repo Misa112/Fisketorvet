@@ -29,7 +29,7 @@ namespace Fisketorvet.Pages.Products
                 return Page();
             }
             catalog.CreateProduct(Product);
-            return RedirectToPage("AllProducts");
+            return RedirectToPage("AllProductsAdmin");
         }    
     }    
 }

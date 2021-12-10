@@ -44,7 +44,7 @@
   {
     "ProductId": 7,
     "ProductName": "Kebab",
-    "Price": 79,
+    "Price": 79.0,
     "Store": "AND KEBAB",
     "ImageName": "kebab.jpg"
   },
@@ -58,15 +58,15 @@
   {
     "ProductId": 9,
     "ProductName": "CHEESECAKE CARAMEL",
-    "Price": 40,
+    "Price": 40.0,
     "Store": "ESPRESSO HOUSE",
     "ImageName": "CARAMEL.png"
   },
   {
     "ProductId": 10,
     "ProductName": "Bubble Tea",
-    "Price": 43,
+    "Price": 43.0,
     "Store": "HAPPY BOBBA",
     "ImageName": "boba.jpg"
-  } 
+  }
 ]

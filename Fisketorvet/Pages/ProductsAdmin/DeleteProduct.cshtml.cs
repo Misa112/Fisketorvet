@@ -31,7 +31,7 @@ namespace Fisketorvet.Pages.Products
                 return Page();
             }
             catalog.DeleteProduct(id);
-            return RedirectToPage("AllProducts");
+            return RedirectToPage("AllProductsAdmin");
         }
     }
 }

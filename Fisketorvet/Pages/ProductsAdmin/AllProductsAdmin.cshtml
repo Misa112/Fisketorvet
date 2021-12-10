@@ -46,12 +46,7 @@
                 <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
             </td>
             <td>                
-                @*<a asp-page="DeleteProduct" asp-route-id="@p.ProductId">Delete</a>*@
-            
-                <a asp-page="/Orders/ShoppingCart" asp-route-productid="@p.ProductId"
-                   class="btn btn-success btn-group-lg pull-right">
-                    Add To Cart
-                </a>   
+                <a asp-page="DeleteProduct" asp-route-id="@p.ProductId">Delete</a>              
             </td>
         </tr>
         }
