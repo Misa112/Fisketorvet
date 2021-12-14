@@ -30,19 +30,21 @@
                         @if (!String.IsNullOrEmpty(adminUsername) || !String.IsNullOrEmpty(normalUsername))
                         {
                             <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Stores/AllStores">Stores</a>
-
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ProductsAdmin/AllProductsAdmin">Admin (Products)</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Products/AllProducts">E-SHOP</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Customers/AllCustomers">Customers</a>
-                        </li>
-
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Stores/AllStores">Stores</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/ProductsAdmin/AllProductsAdmin">Products</a>
+                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Products/AllProducts">E-SHOP</a>
+                            </li>*@
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Customers/CreateCustomer">Create User</a>
+                            </li>
+                        }
                     </ul>
                 </div>
                 @if (!String.IsNullOrEmpty(adminUsername) || !String.IsNullOrEmpty(normalUsername))
