@@ -27,6 +27,7 @@ namespace Fisketorvet.Services
                 if(p.ProductId == id)
                 {
                     itemsInCart.Remove(p);
+                    break;
                 }
             }
         }

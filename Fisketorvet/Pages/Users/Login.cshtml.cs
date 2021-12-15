@@ -39,7 +39,7 @@ namespace Fisketorvet.Pages.Users
                 {
                     // an admin
                     HttpContext.Session.SetString("admin", validUser.Email);
-                    return Redirect("../Customers/AllCustomers");
+                    return Redirect("/Index");
                 }
                 //normal user with a login account
                 else

@@ -1,13 +1,23 @@
 ﻿@page
 @model Fisketorvet.Pages.Products.AllProductsModel
+@using Microsoft.AspNetCore.Http
 @using Fisketorvet.Interfaces
 @inject IProductRepository repository
 @{
     ViewData["Title"] = "AllProducts";
+}
 
+@{ string adminUsername = HttpContext.Session.GetString("admin");
 }
 
 <h1>List of all Products</h1>
+
+@if (!String.IsNullOrEmpty(adminUsername))
+{
+    <p>
+        <a asp-page="CreateProduct">Create New Product</a>
+    </p>
+}
 
 <div>
     <ul>
@@ -36,13 +46,20 @@
         {
         <tr>
             <td>@p.ProductName</td>
-            <td>@p.Store</td>
+            <td>@p.ProductName</td>
             <td>@p.Price</td>
             <td>
                 <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
             </td>
             <td>
-                <a asp-page="/Orders/ShoppingCart" asp-route-id="@p.ProductId"> Add To Cart </a>        
+                @if (!String.IsNullOrEmpty(adminUsername))
+                {
+                    <a asp-page="DeleteProduct" asp-route-id="@p.ProductId">Delete</a>
+                }
+                else
+                {
+                    <a asp-page="/Orders/ShoppingCart" asp-route-id="@p.ProductId"> Add To Cart </a>
+                }
             </td>
         </tr>
         }

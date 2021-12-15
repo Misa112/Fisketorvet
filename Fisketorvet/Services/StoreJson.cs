@@ -10,7 +10,7 @@ namespace Fisketorvet.Services
 {
     public class StoreJson : IStoreRepository
     {
-        string JsonFileName = @"C:\Users\sauga\source\repos\Fisketorvet\Fisketorvet\Data\JsonStores.json";
+        string JsonFileName = @"C:\Users\micha\OneDrive\Desktop\Fisketorvet\Fisketorvet\Data\JsonStores.json";
 
         public List<Store> AllStores()
         {
@@ -67,6 +67,21 @@ namespace Fisketorvet.Services
             }
             return new Store();
         }
+
+        //public List<Store> GetStoresOffer()
+        //{
+        //    List<Store> stores = AllStores();
+        //    List<Store> offerStores = new List<Store>();
+
+        //    foreach (var s in stores)
+        //    {
+        //        if(s.Offer != null)
+        //        {
+        //            offerStores.Add(s);
+        //        }
+        //    }
+        //    return offerStores;
+        //}
 
         public void DeleteStore(int id)
         {
