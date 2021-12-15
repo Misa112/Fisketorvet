@@ -28,7 +28,8 @@ namespace Fisketorvet.Pages.Stores
             if(!string.IsNullOrEmpty(FilterCriteria))
             {
                 Stores = catalog.FilterStore(FilterCriteria);
-            }
+            }                       
+
             return Page();
         }
     }
