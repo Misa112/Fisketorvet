@@ -45,6 +45,7 @@ namespace Fisketorvet.Pages.Users
                 else
                 {
                     HttpContext.Session.SetString("normal", validUser.Email);
+                    HttpContext.Session.SetString("normalusername", validUser.Name);
                     return Redirect("/Index");
                 }
             }

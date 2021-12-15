@@ -1,9 +1,12 @@
 ﻿@page
 @model Fisketorvet.Pages.Stores.ProductsOfStoreModel
+@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "ProductsOfStore";
 }
 
+@{ string adminUsername = HttpContext.Session.GetString("admin");
+}
 <h1>All Products of the store</h1>
 
 <table class="table">
@@ -18,17 +21,20 @@
     <tbody>
         @foreach (var p in Model.Products)
         {
-        <tr>
-            <td>@p.ProductName</td>
-            <td>@p.ProductName</td>
-            <td>@p.Price</td>
-            <td>
-                <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
-            </td>
-            <td>   
-                <a asp-page="/Products/DeleteProduct" asp-route-id="@p.ProductId">Delete</a>
-            </td>
-        </tr>
+            <tr>
+                <td>@p.ProductName</td>
+                <td>@p.ProductName</td>
+                <td>@p.Price</td>
+                <td>
+                    <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
+                </td>
+                <td>
+                    @if (!String.IsNullOrEmpty(adminUsername))
+                    {
+                        <a asp-page="/Products/DeleteProduct" asp-route-id="@p.ProductId">Delete</a>
+                    }
+                </td>
+            </tr>
         }
     </tbody>
 </table>
