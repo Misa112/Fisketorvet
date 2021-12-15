@@ -16,5 +16,23 @@
     "Email": "Sabin@gmail.com",
     "Password": "AQAAAAEAACcQAAAAEMN+oaePqNbHDSsmNEYZEfDbm8twjgBRatX9poneq4bRDSEBWRYbZr9pS1qAIp7qgg==",
     "IsAdmin": false
+  },
+  {
+    "CustomerId": 3,
+    "Name": "Michaela ",
+    "Address": "J. Gresaka 6",
+    "PhoneNumber": 12345678,
+    "Email": "michaela.macejovska@yahoo.com",
+    "Password": "AQAAAAEAACcQAAAAEIu4qT7i5MVSfYcskysGzyNrYQciY/k7cHJHrY8PWnP53zuY2K+aLqs6Ev/B8+RJ7w==",
+    "IsAdmin": true
+  },
+  {
+    "CustomerId": 4,
+    "Name": "Viktoria",
+    "Address": "Kamenicka",
+    "PhoneNumber": 87654321,
+    "Email": "viktoria@gmail.com",
+    "Password": "AQAAAAEAACcQAAAAEAW62k5wot7l53JQjCBbSPT2LadsWsS8ESP7k2a3/ZuvPWJ5qQqMzjGXf9/VtGBGew==",
+    "IsAdmin": false
   }
 ]

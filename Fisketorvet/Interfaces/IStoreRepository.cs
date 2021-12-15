@@ -14,7 +14,7 @@ namespace Fisketorvet.Interfaces
 
         List<Store> FilterStore(string criteria);
         
-        Store GetStore(int id);        
+        Store GetStore(int id);
 
         void DeleteStore(int id);
     }
