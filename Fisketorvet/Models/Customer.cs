@@ -13,6 +13,7 @@ namespace Fisketorvet.Models
 
         public string Name { get; set; }
 
+        [Required]
         public string Address { get; set; }
 
         public int PhoneNumber { get; set; }

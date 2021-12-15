@@ -32,6 +32,8 @@
                     @if (!String.IsNullOrEmpty(adminUsername))
                     {
                         <a asp-page="/Products/DeleteProduct" asp-route-id="@p.ProductId">Delete</a>
+                    }else{
+                        <a asp-page="/Orders/ShoppingCart" asp-route-id="@p.ProductId"> Add To Cart </a>
                     }
                 </td>
             </tr>

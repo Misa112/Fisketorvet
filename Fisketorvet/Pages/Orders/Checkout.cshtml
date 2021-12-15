@@ -1,4 +1,24 @@
 ﻿@page
 @model Fisketorvet.Pages.Orders.CheckoutModel
+@using Microsoft.AspNetCore.Http
 @{
+    ViewData["Title"] = "CheckOut";
 }
+@{ string Username = HttpContext.Session.GetString("normalusername");
+}
+
+<h2 style="glyph-orientation-horizontal">Check-Out</h2>
+
+<form method="post">
+    <h3>Please, enter you  information</h3>
+    <div class="form-group">
+        <label>Name:</label><input value=@Username asp-for="@Model.Customer.Name" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label>Shipping Address:</label><input asp-for="@Model.Customer.Address" class="form-control" />
+        <span asp-validation-for="@Model.Customer.Address" class="text-danger"></span>
+    </div>
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>

@@ -14,6 +14,7 @@ namespace Fisketorvet.Pages.Orders
     {
         private IOrderRepository catalog;
         private ShoppingCartService cart;
+
         [BindProperty]
         public Customer Customer { get; set; }
         public Order Order { get; set; }
@@ -33,7 +34,13 @@ namespace Fisketorvet.Pages.Orders
             {
                 return Page();
             }
-            
+
+            Order order = new Order();
+            order.Name = Customer.Name;
+            order.ShippingAddress = Customer.Address;
+            order.Products = cart.GetOrderedProducts();
+            order.DateTime = DateTime.Now;
+            catalog.AddOrder(order);
 
             return RedirectToPage("Order", Customer);
         }
