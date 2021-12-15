@@ -21,7 +21,7 @@
             <tr>
                 <td>@p.ProductName</td>
                 <td>@p.Store</td>
-                <td>@p.Price.ToString()</td>
+                <td>@p.Price.ToString("#,##0.00") dkk</td>
                 <td>
                     <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
                 </td>
@@ -35,7 +35,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td> @Model.CartService.TotalPrice().ToString() </td>
+                <td> @Model.CartService.TotalPrice().ToString("#,##0.00") dkk </td>
             </tr>
         </tfoot>
 }

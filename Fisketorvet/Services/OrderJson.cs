@@ -10,7 +10,7 @@ namespace Fisketorvet.Services
 {
     public class OrderJson : IOrderRepository
     {
-        string JsonFileName = @"C:\Users\micha\OneDrive\Desktop\Fisketorvet\Fisketorvet\Data\JsonBookOrders.json";
+        string JsonFileName = @"C:\Users\sauga\source\repos\Fisketorvet\Fisketorvet\Data\JsonOrder.json";
 
         public List<Order> GetAllOrders()
         {
@@ -18,21 +18,39 @@ namespace Fisketorvet.Services
         }
         public void AddOrder(Order order)
         {
-            List<Order> orders = GetAllOrders().ToList();
-            order.OrderID = GetOrderNumber() + 1;
+            List<Order> orders = GetAllOrders();
+            List<int> orderIds = new List<int>();
+            if (orders != null)
+            {
+                foreach (var o in orders)
+                {
+                    orderIds.Add(o.OrderID);
+                }
+                if (orderIds.Count != 0)
+                {
+                    int start = orderIds.Max();
+                    order.OrderID = start + 1;
+                }
+            }
+            else
+            {
+                orders = new List<Order>();
+                order.OrderID = 1;
+            }
+            //order.OrderID = GetOrderNumber() + 1;
             orders.Add(order);
             JsonFileWritter.WriteToJsonOrder(orders, JsonFileName);
         }
 
-        private int GetOrderNumber()
-        {
-            List<int> ids = new List<int>();
-            List<Order> orders = GetAllOrders().ToList();
-            foreach (var o in orders)
-            {
-                ids.Add(o.OrderID);
-            }
-            return ids.Max();
-        }
+        //private int GetOrderNumber()
+        //{
+        //    List<int> ids = new List<int>();
+        //    List<Order> orders = GetAllOrders().ToList();
+        //    foreach (var o in orders)
+        //    {
+        //        ids.Add(o.OrderID);
+        //    }
+        //    return ids.Max();
+        //}
     }
 }
