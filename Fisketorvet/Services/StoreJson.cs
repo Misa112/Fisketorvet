@@ -10,7 +10,7 @@ namespace Fisketorvet.Services
 {
     public class StoreJson : IStoreRepository
     {
-        string JsonFileName = @"C:\Users\micha\OneDrive\Desktop\Fisketorvet\Fisketorvet\Data\JsonStores.json";
+        string JsonFileName = @"C:\Users\sauga\source\repos\Fisketorvet\Fisketorvet\Data\JsonStores.json";
 
         public List<Store> AllStores()
         {

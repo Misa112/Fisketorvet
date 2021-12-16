@@ -34,5 +34,23 @@
     "Email": "viktoria@gmail.com",
     "Password": "AQAAAAEAACcQAAAAEAW62k5wot7l53JQjCBbSPT2LadsWsS8ESP7k2a3/ZuvPWJ5qQqMzjGXf9/VtGBGew==",
     "IsAdmin": false
+  },
+  {
+    "CustomerId": 5,
+    "Name": "Monika",
+    "Address": "bellahoj",
+    "PhoneNumber": 852369,
+    "Email": "monika@gmail.com",
+    "Password": "AQAAAAEAACcQAAAAEIfn0qJZ4NlIzUTr3efMt0sZcyXtijFCrJHRnRNsAwAvY2LGCqMGYY6Xni0Wqp6VXQ==",
+    "IsAdmin": false
+  },
+  {
+    "CustomerId": 6,
+    "Name": "test",
+    "Address": "Tulipanvej",
+    "PhoneNumber": 123456,
+    "Email": "saugat@gmail.com",
+    "Password": "AQAAAAEAACcQAAAAEGuXZ6k47v7S/W5NpoHnF29g7cZHesgwMuHg3sJwtNYjV6k2hIFk3EtKdjZeSEYx+w==",
+    "IsAdmin": false
   }
 ]

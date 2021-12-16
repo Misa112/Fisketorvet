@@ -28,7 +28,7 @@ namespace Fisketorvet.Services
         //}
 
 
-       string JsonFileName = @"C:\Users\micha\OneDrive\Desktop\Fisketorvet\Fisketorvet\Data\JsonCustomer.json";
+       string JsonFileName = @"C:\Users\sauga\source\repos\Fisketorvet\Fisketorvet\Data\JsonCustomer.json";
 
         public List<Customer> AllCustomers() 
         {

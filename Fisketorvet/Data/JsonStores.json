@@ -1,13 +1,5 @@
 [
   {
-    "StoreId": 1,
-    "StoreName": "AND KEBAB",
-    "TheStoreType": "Restaurant",
-    "TelContact": 12345678,
-    "Offer": null,
-    "ImageName": "andKebab.png"
-  },
-  {
     "StoreId": 2,
     "StoreName": "BEAUTY HAIR",
     "TheStoreType": "Shop",
@@ -22,14 +14,6 @@
     "TelContact": 81456935,
     "Offer": "5 for 4",
     "ImageName": "book.png"
-  },
-  {
-    "StoreId": 4,
-    "StoreName": "THE ELECTRICITY GIANT",
-    "TheStoreType": "Shop",
-    "TelContact": 47458962,
-    "Offer": null,
-    "ImageName": "elgiganten.png"
   },
   {
     "StoreId": 5,
@@ -65,19 +49,11 @@
   },
   {
     "StoreId": 9,
-    "StoreName": "HUNKEMÖLLER",
+    "StoreName": "HUNKEMï¿½LLER",
     "TheStoreType": "Shop",
     "TelContact": 75869478,
     "Offer": "15 %",
     "ImageName": "hunkemoller.png"
-  },
-  {
-    "StoreId": 10,
-    "StoreName": "JOE AND THE JUICE",
-    "TheStoreType": "Restaurant",
-    "TelContact": 76859321,
-    "Offer": null,
-    "ImageName": "JoeAndTheJuice.png"
   },
   {
     "StoreId": 11,

@@ -1,12 +1,5 @@
 [
   {
-    "ProductId": 1,
-    "ProductName": "Mango Bath Blend",
-    "Price": 75.0,
-    "Store": "THE BODY SHOP",
-    "ImageName": "MANGO.jpg"
-  },
-  {
     "ProductId": 2,
     "ProductName": "Strawberry Lip Butter",
     "Price": 50.0,
@@ -40,13 +33,6 @@
     "Price": 8199.95,
     "Store": "THE ELECTRICITY GIANT",
     "ImageName": "samsungg.jpg"
-  },
-  {
-    "ProductId": 7,
-    "ProductName": "Kebab",
-    "Price": 79.0,
-    "Store": "AND KEBAB",
-    "ImageName": "kebab.jpg"
   },
   {
     "ProductId": 8,

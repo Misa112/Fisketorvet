@@ -34,7 +34,16 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Products/AllProducts">Products</a>
-                            </li>                            
+                            </li>
+                            @if (!String.IsNullOrEmpty(adminUsername))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Customers/CreateCustomer">Create User</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Customers/AllCustomers">View User</a>
+                                </li>
+                            }
                         }
                         else
                         {
