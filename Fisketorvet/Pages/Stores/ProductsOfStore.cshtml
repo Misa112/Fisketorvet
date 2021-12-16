@@ -26,12 +26,12 @@
                 <img src="~/Images/ProductImages/@p.ImageName" width="90" height="130">
             </td>
             <td>   
-                <a asp-page="/Products/DeleteProduct" asp-route-id="@p.ProductId">Delete</a>
+                <a asp-page="/Products/DeleteProduct" asp-route-id="@p.ProductId"><button type="button" class="btn btn-outline-danger">Delete</button></a>
             </td>
         </tr>
         }
     </tbody>
 </table>
 <div>
-    <a asp-page="AllStores">Back to List of Stores</a>
+    <a asp-page="AllStores"><button type="button" class="btn btn-outline-secondary">Back to List of Stores</button></a>
 </div>
